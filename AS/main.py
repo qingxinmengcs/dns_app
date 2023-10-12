@@ -13,8 +13,9 @@ print("socket listening!")
 while True:
     message, clientaddress = serversocket.recvfrom(2048)
     modifiedmessage = json.loads(message.decode()) # type:dict
-    #accept register
+
     if "VALUE" in modifiedmessage:
+        # accept register
         currenttime=time.time()
         type=modifiedmessage["TYPE"]
         fsname=modifiedmessage["NAME"]
